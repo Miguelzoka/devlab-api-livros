@@ -1,0 +1,74 @@
+<div class="container py-5">
+
+  <div class="card shadow-sm p-4">
+
+  <h2 class="mb-4">Cadastro de Livros</h2>
+
+  <div class="mb-4">
+    <label class="form-label">Título</label>
+    <input
+      class="form-control"
+      [(ngModel)]="livro.titulo">
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label">Autor</label>
+    <input
+      class="form-control"
+      [(ngModel)]="livro.autor">
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label">ISBN</label>
+    <input
+      class="form-control"
+      [(ngModel)]="livro.isbn">
+  </div>
+
+    <button
+      class="btn btn-primary rounded-pill px-4"
+      (click)="salvar()">
+      Cadastrar
+    </button>
+
+    <h3 class="mt-5 mb-3">Livros Cadastrados</h3>
+
+    <table class="table table-hover align-middle">
+
+    <thead>
+    <tr>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>ISBN</th>
+      <th width="120">Ações</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    @for (livro of livros; track livro.id) {
+
+    <tr>
+
+      <td>{{ livro.titulo }}</td>
+      <td>{{ livro.autor }}</td>
+      <td>{{ livro.isbn }}</td>
+
+      <td>
+        <button
+          class="btn btn-outline-danger btn-sm rounded-pill px-3"
+          (click)="excluir(livro.id!)">
+          Excluir
+        </button>
+      </td>
+
+    </tr>
+
+    }
+
+    </tbody>
+
+  </table>
+
+</div>
+</div>

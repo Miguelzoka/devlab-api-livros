@@ -1,0 +1,23 @@
+.container {
+  max-width: 800px;
+}
+
+.card {
+  border-radius: 16px;
+}
+
+table {
+  margin-top: 10px;
+}
+
+input {
+  border-radius: 10px;
+}
+
+.btn {
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
