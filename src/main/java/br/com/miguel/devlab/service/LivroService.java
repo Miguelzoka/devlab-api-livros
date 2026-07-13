@@ -16,6 +16,11 @@ public class LivroService {
     }
 
     public Livro salvar(Livro livro) {
+
+        if (repository.existsByIsbn(livro.getIsbn())) {
+            throw new RuntimeException("ISBN já cadastrado.");
+        }
+
         return repository.save(livro);
     }
 
